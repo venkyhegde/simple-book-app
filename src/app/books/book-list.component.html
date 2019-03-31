@@ -1,0 +1,59 @@
+<div class="card m-4">
+  <div class="card-header">
+    <h4>  {{pageTitle}}</h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-2">
+        <h6>Filter By:</h6>
+      </div>
+      <div class="col-sm-2">
+        <input type="text" class="form-control form-control-sm" [(ngModel)]='filterString' />
+      </div>
+    </div>
+
+    <div class="row m-2">
+      <div class="col-sm-2"> <h5>Filter By:</h5></div>
+      <div class="col-sm-2"><h5>{{filterString}}</h5></div>
+    </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf='books && books.length'>
+        <thead>
+          <tr>
+            <th>
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)='toggleImage()'>
+                {{showImage ? 'Hide':'Show'}} Image</button>
+            </th>
+            <th>
+              Book Name
+            </th>
+            <th>
+              Publisher
+            </th>
+            <th>
+              Author
+            </th>
+            <th>
+              Price
+            </th>
+            <th>
+              Rating
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let book of filteredBooks'>
+              <td><img *ngIf='showImage' [src]='book.imageUrl' [title]='book.title' [style.width.px]='imageWidth' ></td>
+            <td>{{book.title}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price | currency : 'USD' : 'symbol' : '1.2-2'}}</td>
+<!--            <td>{{book.rating}}</td>-->
+            <td><pm-rate></pm-rate></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

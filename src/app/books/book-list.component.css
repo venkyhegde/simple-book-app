@@ -1,0 +1,15 @@
+table{
+  font-family: 'Montserrat', sans-serif;
+}
+thead{
+  color: #167af6;
+}
+
+th{
+  font-size: 18px;
+  font-weight: 600;
+}
+td{
+  font-size: 16px;
+  font-weight: 400;
+}
