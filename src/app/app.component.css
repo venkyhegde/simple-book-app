@@ -1,0 +1,13 @@
+.bg-lime{
+  background-color: #f4b643;
+}
+.nav-link{
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+.navbar a, i {
+  color: aqua;
+  font-size: 18px;
+  font-weight: 700;
+}

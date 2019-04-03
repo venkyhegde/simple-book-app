@@ -1,0 +1,34 @@
+<div class="card m-4">
+  <div class="card-header">
+    <h4>  {{pageTitle}}</h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <td rowspan="4"><img [src]="book.imageUrl">
+                <h6><strong>ISBN:{{book.isbn}}</strong></h6>
+              </td>
+              <th>Author</th><td>{{book.author}}</td>
+              <th>Publisher</th><td>{{book.publisher}}</td>
+            </tr>
+            <tr>
+              <th>Price</th><td>{{book.price | currency : 'USD' : 'symbol'}}</td>
+              <th>Rating</th><td><pm-rate [rating]='book.rating'></pm-rate></td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                {{book.description}}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-outline-info" (click)="onBack()"><i class="fas fa-chevron-left"></i> Back</button>
+  </div>
+</div>

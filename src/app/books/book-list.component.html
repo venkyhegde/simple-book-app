@@ -44,12 +44,13 @@
         <tbody>
           <tr *ngFor='let book of filteredBooks'>
               <td><img *ngIf='showImage' [src]='book.imageUrl' [title]='book.title' [style.width.px]='imageWidth' ></td>
-            <td>{{book.title}}</td>
+            <td><a [routerLink]="['/book-detail', book.id]">{{book.title}}</a></td>
             <td>{{book.publisher}}</td>
             <td>{{book.author}}</td>
             <td>{{book.price | currency : 'USD' : 'symbol' : '1.2-2'}}</td>
 <!--            <td>{{book.rating}}</td>-->
-            <td><pm-rate></pm-rate></td>
+<!--            receive an event and pass it to components method-->
+            <td><pm-rate [rating]='book.rating' (notify)='onRatingCliked($event)'></pm-rate></td>
 
           </tr>
         </tbody>
