@@ -2,11 +2,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {RouterModule} from '@angular/router';
+
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {BookModule} from './books/book.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 
 
 @NgModule({
@@ -17,11 +18,9 @@ import {BookModule} from './books/book.module';
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: 'home', component: HomeComponent},
-      {path: '', redirectTo: 'home', pathMatch: 'full'}
-    ]),
-    BookModule
+    BookModule,
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
